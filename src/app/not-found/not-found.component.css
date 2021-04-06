@@ -1,0 +1,10 @@
+img {
+  width: 100%;
+  /* max-height: 100vh; */
+  height: auto;
+  /* object-fit: contain; */
+}
+
+.bottom-spacer {
+  height: 0 !important;
+}

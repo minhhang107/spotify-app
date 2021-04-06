@@ -1,0 +1,19 @@
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+img {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.mat-list-item .mat-icon:hover {
+  cursor: pointer;
+}

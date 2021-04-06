@@ -1,0 +1,10 @@
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.mat-card-header {
+  margin-bottom: 15px;
+}

@@ -1,0 +1,10 @@
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  margin-bottom: 30px;
+}
