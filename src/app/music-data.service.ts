@@ -82,9 +82,6 @@ export class MusicDataService {
       .pipe(
         mergeMap((favouritesArray) => {
           if (favouritesArray.length > 0) {
-            var removedIndex = favouritesArray.indexOf(id);
-            favouritesArray.splice(removedIndex, 1);
-
             return this.spotifyToken.getBearerToken().pipe(
               mergeMap((token) => {
                 return this.http.get<any>(

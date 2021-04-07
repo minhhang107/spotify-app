@@ -27,13 +27,15 @@ export class SearchResultsComponent implements OnInit {
   ngOnInit(): void {
     this.paramSubscription = this.route.queryParams.subscribe((params) => {
       this.searchQuery = params.q;
-    });
 
-    this.musicDataService.searchArtists(this.searchQuery).subscribe((data) => {
-      this.results = data.artists.items.filter(
-        (artist: any) => artist.images.length > 0
-      );
-      console.log(this.results);
+      this.musicDataService
+        .searchArtists(this.searchQuery)
+        .subscribe((data) => {
+          this.results = data.artists.items.filter(
+            (artist: any) => artist.images.length > 0
+          );
+          console.log(this.results);
+        });
     });
   }
 }

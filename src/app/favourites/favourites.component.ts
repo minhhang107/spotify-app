@@ -12,14 +12,12 @@ export class FavouritesComponent implements OnInit {
   removeFromFavourites(id: any) {
     this.musicDataService.removeFromFavourites(id).subscribe((data) => {
       this.favourites = data.tracks;
-      console.log(this.favourites);
     });
   }
 
   ngOnInit(): void {
     this.musicDataService.getFavourites().subscribe((data) => {
       this.favourites = data.tracks;
-      console.log(this.favourites);
     });
   }
 }
