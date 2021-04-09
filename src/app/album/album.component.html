@@ -4,6 +4,13 @@
   Click the <mat-icon mat-list-icon>queue_music</mat-icon> icon to add a song to
   your favourites list
 </p>
+
+<div class="overlay" *ngIf="loading">
+  <div class="center">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>
+
 <mat-card>
   <mat-card-content fxLayout="row wrap" fxLayout.xs="column">
     <div fxflex *ngIf="album.images">

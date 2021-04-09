@@ -3,6 +3,13 @@
   Full discography for {{ artist.name }} <br />
   Click the <b>album cover</b> for more information
 </p>
+
+<div class="overlay" *ngIf="loading">
+  <div class="center">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>
+
 <mat-card
   *ngIf="artist.images"
   [ngStyle]="{
@@ -13,7 +20,7 @@
 >
 </mat-card>
 <br /><br />
-<h1>Full Discography</h1>
+<h1 *ngIf="!loading">Full Discography</h1>
 
 <div fxLayout="row wrap" fxLayout.xs="column">
   <!-- Single "Responsive" Card-->

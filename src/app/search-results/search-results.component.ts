@@ -11,6 +11,7 @@ import { MusicDataService } from '../music-data.service';
 export class SearchResultsComponent implements OnInit {
   results: any;
   searchQuery: any;
+  loading: boolean = true;
   paramSubscription!: Subscription;
 
   filterArtists(array: any) {
@@ -34,7 +35,7 @@ export class SearchResultsComponent implements OnInit {
           this.results = data.artists.items.filter(
             (artist: any) => artist.images.length > 0
           );
-          console.log(this.results);
+          this.loading = false;
         });
     });
   }

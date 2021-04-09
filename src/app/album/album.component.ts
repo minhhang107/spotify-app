@@ -11,6 +11,7 @@ import { MusicDataService } from '../music-data.service';
 })
 export class AlbumComponent implements OnInit {
   album = {} as any;
+  loading: boolean = true;
   paramSubscription: Subscription | undefined;
 
   @Output() iconClicked = new EventEmitter();
@@ -41,9 +42,10 @@ export class AlbumComponent implements OnInit {
   }
   ngOnInit(): void {
     this.paramSubscription = this.route.params.subscribe((params: Params) => {
-      this.musicDataService
-        .getAlbumById(params.id)
-        .subscribe((data) => (this.album = data));
+      this.musicDataService.getAlbumById(params.id).subscribe((data) => {
+        this.album = data;
+        this.loading = false;
+      });
     });
   }
 

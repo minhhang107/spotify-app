@@ -16,6 +16,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -30,6 +32,7 @@ import { FavouritesComponent } from './favourites/favourites.component';
 import { RegisterComponentComponent } from './register-component/register-component.component';
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { InterceptTokenService } from './intercept-token.service';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,7 @@ import { InterceptTokenService } from './intercept-token.service';
     FavouritesComponent,
     RegisterComponentComponent,
     LoginComponentComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +63,8 @@ import { InterceptTokenService } from './intercept-token.service';
     MatInputModule,
     MatCardModule,
     MatChipsModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
     FlexLayoutModule,
     HttpClientModule,
     FormsModule,

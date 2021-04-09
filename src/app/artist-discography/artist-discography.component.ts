@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 export class ArtistDiscographyComponent implements OnInit {
   albums = [] as any;
   artist = {} as any;
+  loading: boolean = true;
   paramSubscription = {} as Subscription;
 
   constructor(
@@ -22,6 +23,7 @@ export class ArtistDiscographyComponent implements OnInit {
     this.paramSubscription = this.route.params.subscribe((params: Params) => {
       this.musicDataService.getArtistById(params.id).subscribe((data) => {
         this.artist = data;
+        this.loading = false;
       });
 
       this.musicDataService
@@ -37,10 +39,4 @@ export class ArtistDiscographyComponent implements OnInit {
         });
     });
   }
-
-  // ngOnDestroy(): void {
-  //   if (this.paramSubscription) {
-  //     this.paramSubscription.unsubscribe();
-  //   }
-  // }
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from '../auth.service';
-import { RegisterUser } from '../RegisterUser';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-register-component',
@@ -19,7 +20,11 @@ export class RegisterComponentComponent implements OnInit {
   success: boolean = false;
   loading: boolean = false;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, public dialog: MatDialog) {}
+
+  openDialog() {
+    this.dialog.open(DialogComponent);
+  }
 
   ngOnInit(): void {}
 
@@ -36,6 +41,7 @@ export class RegisterComponentComponent implements OnInit {
           this.success = true;
           this.warning = null;
           this.loading = false;
+          this.openDialog();
         },
         (err) => {
           this.success = false;

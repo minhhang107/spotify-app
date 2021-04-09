@@ -3,6 +3,13 @@
   The following is a list of new releases <br />
   Click the <b>album cover</b> or <b>artist name</b> for more information.
 </p>
+
+<div class="overlay" *ngIf="loading">
+  <div class="center">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>
+
 <div class="content">
   <div fxLayout="row wrap" fxLayout.xs="column">
     <!-- Single "Responsive" Card-->
